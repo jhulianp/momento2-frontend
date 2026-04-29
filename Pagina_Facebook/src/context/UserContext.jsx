@@ -7,19 +7,27 @@ export function useUser() {
 }
 
 export function UserProvider({ children }) {
-  const [user] = useState({
-    name: 'Jhulian Pulgarin Gonzalez',
-    username: 'jhulian',
-    initials: 'JP',
-    color: '#3D6B5C',
-    bio: 'medellin, amante a los albums',
-    followers: 847,
-    following: 213,
-    posts: 34,
-  })
+  const [user, setUser] = useState(null) // null = no autenticado
+
+  const login = (userData) => {
+    setUser({
+      name:      userData.name     || 'Usuario',
+      username:  userData.username || 'usuario',
+      initials:  userData.name
+        ? userData.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
+        : 'US',
+      color:     '#3D6B5C',
+      bio:       userData.bio      || '',
+      followers: 0,
+      following: 0,
+      posts:     0,
+    })
+  }
+
+  const logout = () => setUser(null)
 
   return (
-    <UserContext.Provider value={user}>
+    <UserContext.Provider value={{ user, login, logout }}>
       {children}
     </UserContext.Provider>
   )

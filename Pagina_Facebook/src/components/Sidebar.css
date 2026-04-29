@@ -65,6 +65,7 @@
   font-weight: 400;
   transition: all 0.15s;
   position: relative;
+  text-decoration: none;
 }
 .sidebar__link:hover {
   background: var(--ink3);
@@ -82,6 +83,21 @@
   width: 2px; height: 16px;
   background: var(--gold);
   border-radius: 2px;
+}
+
+/* botón cerrar sesión */
+.sidebar__link--logout {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-sans);
+  margin-top: 4px;
+}
+.sidebar__link--logout:hover {
+  background: rgba(201, 108, 108, 0.08);
+  color: #e07070;
 }
 
 .sidebar__icon {
