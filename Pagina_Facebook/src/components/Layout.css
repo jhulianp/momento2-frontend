@@ -1,0 +1,14 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--ink);
+}
+
+.layout__main {
+  flex: 1;
+  margin-left: var(--sidebar-w);
+  margin-right: 260px;
+  min-height: 100vh;
+  border-left: 1px solid var(--ink3);
+  border-right: 1px solid var(--ink3);
+}

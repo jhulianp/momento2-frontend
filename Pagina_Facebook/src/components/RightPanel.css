@@ -1,0 +1,79 @@
+.rp {
+  position: fixed;
+  top: 0; right: 0;
+  width: 260px;
+  height: 100vh;
+  background: var(--ink2);
+  border-left: 1px solid var(--ink3);
+  padding: 16px 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rp__search input {
+  width: 100%;
+  background: var(--ink3);
+  border: 1px solid var(--ink4);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--mist);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.rp__search input::placeholder { color: var(--dust); }
+.rp__search input:focus { border-color: var(--gold); }
+
+.rp__block { display: flex; flex-direction: column; gap: 12px; }
+
+.rp__title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--mist);
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.rp__suggest {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.rp__av {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600;
+  flex-shrink: 0;
+}
+.rp__info { flex: 1; overflow: hidden; }
+.rp__name {
+  font-size: 12px; font-weight: 500;
+  color: var(--mist);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.rp__sub { font-size: 11px; color: var(--dust); }
+
+.rp__follow {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.rp__follow:hover { background: var(--gold); color: var(--ink); }
+
+.rp__trend { padding: 6px 0; border-bottom: 1px solid var(--ink3); }
+.rp__trend:last-child { border-bottom: none; }
+.rp__trend-tag { font-size: 11px; font-weight: 500; color: var(--gold); }
+.rp__trend-name { font-size: 12px; color: var(--mist); margin-top: 1px; }
+.rp__trend-count { font-size: 10px; color: var(--dust); }
+
+.rp__footer { font-size: 11px; color: var(--dust2); margin-top: auto; }
